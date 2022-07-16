@@ -12,6 +12,12 @@
           "path": "/form-item",
           "meta": {},
           "children": []
+        },
+        {
+          "title": "SearchForm",
+          "path": "/search-form",
+          "meta": {},
+          "children": []
         }
       ]
     }

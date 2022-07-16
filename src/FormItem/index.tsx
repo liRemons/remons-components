@@ -4,7 +4,7 @@ import { Form, FormItemProps } from 'antd';
 import { Com } from './const';
 
 interface IProps extends FormItemProps {
-  component:
+  component?:
     | 'input'
     | 'inputPassword'
     | 'textarea'
@@ -18,16 +18,24 @@ interface IProps extends FormItemProps {
     | 'timePicker'
     | 'upload'
     | 'treeSelect'
-    | 'cascader';
+    | 'cascader'
+    | any;
   componentProps?: object;
 }
 
-const MyForm: React.FC<IProps> = (props) => {
-  const { component, componentProps, ...others } = props;
-  const ReCompont = Com[component];
+const MyForm: React.FC<IProps> = ({ component, componentProps, children, ...others }) => {
+  let ReCompont = null;
+  if (component) {
+    if (typeof component === 'string') {
+      ReCompont = Com[component];
+    } else {
+      ReCompont = component;
+    }
+  }
+
   return (
     <Form.Item {...others}>
-      <ReCompont {...componentProps}></ReCompont>
+      {ReCompont ? <ReCompont {...componentProps}></ReCompont> : children}
     </Form.Item>
   );
 };

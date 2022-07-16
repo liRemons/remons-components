@@ -58,9 +58,9 @@ export default () => (
 
 - 如需在表单项设置私有属性，请传入到 componentProps，具体属性参考 antd 各表单 API
 
-| 参数           | 说明             | 类型   | 默认值 |
-| -------------- | ---------------- | ------ | ------ |
-| component      | 表单类型         | string | /      |
-| componentProps | 透传到表单 props | object | /      |
+| 参数           | 说明             | 类型                       | 是否必填 | 默认值 |
+| -------------- | ---------------- | -------------------------- | -------- | ------ |
+| component      | 表单类型         | string \| ReactNode \| fun | 否       | /      |
+| componentProps | 透传到表单 props | object                     | 否       | /      |
 
 - 其余字段继承 antd `Form.Item`，请参考 antd Form.Item API

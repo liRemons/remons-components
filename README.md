@@ -1,4 +1,4 @@
-# remons-componets
+# remons-components
 
 ## Getting Started
 

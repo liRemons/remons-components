@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from 'E:/job/project/remons-components/node_modules/umi/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from 'E:/job/project/remons-components/node_modules/umi/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -9,14 +9,16 @@ export function getRoutes() {
   {
     "path": "/~demos/:uuid",
     "layout": false,
-    "wrappers": [require('../dumi/layout').default],
-    "component": ((props) => {
-        const React = require('react');
-        const { default: getDemoRenderArgs } = require('E:/job/project/remons-components/node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs');
-        const { default: Previewer } = require('dumi-theme-default/es/builtins/Previewer.js');
-        const { usePrefersColor, context } = require('dumi/theme');
+    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')})],
+    "component": ((props) => dynamic({
+          loader: async () => {
+            const React = await import('react');
+            const { default: getDemoRenderArgs } = await import(/* webpackChunkName: 'dumi_demos' */ 'E:/job/project/remons-components/node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs');
+            const { default: Previewer } = await import(/* webpackChunkName: 'dumi_demos' */ 'dumi-theme-default/es/builtins/Previewer.js');
+            const { usePrefersColor, context } = await import(/* webpackChunkName: 'dumi_demos' */ 'dumi/theme');
 
-        
+            return props => {
+              
       const { demos } = React.useContext(context);
       const [renderArgs, setRenderArgs] = React.useState([]);
 
@@ -45,7 +47,10 @@ export function getRoutes() {
           return `Demo ${props.match.params.uuid} not found :(`;
       }
     
-        })
+            }
+          },
+          loading: () => null,
+        }))()
   },
   {
     "path": "/_demos/:uuid",
@@ -55,15 +60,15 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [require('../dumi/layout').default, require('E:/job/project/remons-components/node_modules/dumi-theme-default/es/layout.js').default],
+    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'../dumi/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'E:/job/project/remons-components/node_modules/dumi-theme-default/es/layout.js')})],
     "routes": [
       {
         "path": "/form-item",
-        "component": require('E:/job/project/remons-components/src/FormItem/index.md').default,
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'FormItem__index.md' */'E:/job/project/remons-components/src/FormItem/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/FormItem/index.md",
-          "updatedTime": 1657952344172,
+          "updatedTime": 1657954261000,
           "componentName": "FormItem",
           "slugs": [
             {
@@ -97,12 +102,41 @@ export function getRoutes() {
         "title": "FormItem - remons-componets"
       },
       {
+        "path": "/search-form",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'SearchForm__index.md' */'E:/job/project/remons-components/src/SearchForm/index.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/SearchForm/index.md",
+          "updatedTime": 1657977974918,
+          "componentName": "SearchForm",
+          "slugs": [
+            {
+              "depth": 2,
+              "value": "SearchForm",
+              "heading": "searchform"
+            },
+            {
+              "depth": 4,
+              "value": "使用示例",
+              "heading": "使用示例"
+            }
+          ],
+          "title": "SearchForm",
+          "hasPreviewer": true,
+          "group": {
+            "path": "/search-form",
+            "title": "SearchForm"
+          }
+        },
+        "title": "SearchForm - remons-componets"
+      },
+      {
         "path": "/",
-        "component": require('E:/job/project/remons-components/docs/index.md').default,
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'docs__index.md' */'E:/job/project/remons-components/docs/index.md')}),
         "exact": true,
         "meta": {
           "filePath": "docs/index.md",
-          "updatedTime": 1657951489000,
+          "updatedTime": 1657954261000,
           "slugs": [
             {
               "depth": 3,
