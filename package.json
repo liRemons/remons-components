@@ -1,9 +1,9 @@
 {
-  "private": true,
-  "name": "remons-componets",
-  "version": "1.0.0",
+  "name": "remons-components",
+  "version": "0.0.1-beta",
   "scripts": {
     "start": "dumi dev",
+    "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "build": "father build",
@@ -13,6 +13,7 @@
     "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build"
   },
+  "license": "MIT",
   "files": [
     "dist"
   ],
@@ -30,6 +31,7 @@
     ]
   },
   "dependencies": {
+    "antd": "^4.21.6",
     "react": "^18.0.0"
   },
   "devDependencies": {
