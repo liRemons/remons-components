@@ -1,18 +1,19 @@
 {
-  "private": true,
-  "name": "remons-componets",
-  "version": "1.0.0",
+  "name": "remons-components",
+  "version": "0.0.1-beta",
   "scripts": {
     "start": "dumi dev",
+    "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
-    "build": "father build",
+    "build": "father build && dumi build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "prepublishOnly": "npm run build"
   },
+  "license": "MIT",
   "files": [
     "dist"
   ],
@@ -30,7 +31,10 @@
     ]
   },
   "dependencies": {
-    "react": "^18.0.0"
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.21.6",
+    "react": "^18.0.0",
+    "remons-components": "^0.0.1-beta"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",
