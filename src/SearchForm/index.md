@@ -32,3 +32,5 @@ export default () => {
   );
 };
 ```
+
+<API exports='["IPropsOptions", "SearchButtonProps", "FoldProps"]'></API>

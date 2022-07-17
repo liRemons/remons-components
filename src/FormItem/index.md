@@ -2,7 +2,7 @@
 
 基于 antd from 封装的简洁表单
 
-##### 默认提供了以下表单
+##### component 字段默认提供了以下表单
 
 | 元素          | 对应 antd 组件 |
 | ------------- | -------------- |
@@ -35,7 +35,7 @@ const layout = {
 
 const items = [
   { label: '输入', component: 'input' },
-  { label: '数字', component: 'inputNumber' },
+  { label: '数字', component: 'inputNumber', componentProps: { min: 0 } },
   {
     label: '下拉选择',
     component: 'select',
@@ -48,19 +48,14 @@ const items = [
 export default () => (
   <Form {...layout}>
     {items.map((item) => (
-      <FormItem {...item} />
+      <FormItem key={item.label} {...item} />
     ))}
   </Form>
 );
 ```
 
-##### API
+<API exports='["IPropsOption"]'></API>
 
-- 如需在表单项设置私有属性，请传入到 componentProps，具体属性参考 antd 各表单 API
-
-| 参数           | 说明             | 类型                       | 是否必填 | 默认值 |
-| -------------- | ---------------- | -------------------------- | -------- | ------ |
-| component      | 表单类型         | string \| ReactNode \| fun | 否       | /      |
-| componentProps | 透传到表单 props | object                     | 否       | /      |
-
-- 其余字段继承 antd `Form.Item`，请参考 antd Form.Item API
+<Alert type="info">
+  其余字段请参考 antd Form.Item
+</Alert>

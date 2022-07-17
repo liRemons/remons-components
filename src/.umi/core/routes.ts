@@ -68,7 +68,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/FormItem/index.md",
-          "updatedTime": 1657954261000,
+          "updatedTime": 1657978056000,
           "componentName": "FormItem",
           "slugs": [
             {
@@ -78,8 +78,8 @@ export function getRoutes() {
             },
             {
               "depth": 5,
-              "value": "默认提供了以下表单",
-              "heading": "默认提供了以下表单"
+              "value": "component 字段默认提供了以下表单",
+              "heading": "component-字段默认提供了以下表单"
             },
             {
               "depth": 5,
@@ -87,9 +87,9 @@ export function getRoutes() {
               "heading": "使用方式示例"
             },
             {
-              "depth": 5,
-              "value": "API",
-              "heading": "api"
+              "depth": 3,
+              "value": "IPropsOption",
+              "heading": "api-ipropsoption"
             }
           ],
           "title": "FormItem",
@@ -107,7 +107,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/SearchForm/index.md",
-          "updatedTime": 1657977974918,
+          "updatedTime": 1657978056000,
           "componentName": "SearchForm",
           "slugs": [
             {
@@ -119,6 +119,21 @@ export function getRoutes() {
               "depth": 4,
               "value": "使用示例",
               "heading": "使用示例"
+            },
+            {
+              "depth": 3,
+              "value": "IPropsOptions",
+              "heading": "api-ipropsoptions"
+            },
+            {
+              "depth": 3,
+              "value": "SearchButtonProps",
+              "heading": "api-searchbuttonprops"
+            },
+            {
+              "depth": 3,
+              "value": "FoldProps",
+              "heading": "api-foldprops"
             }
           ],
           "title": "SearchForm",
