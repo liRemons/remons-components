@@ -33,8 +33,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.21.6",
-    "react": "^18.0.0",
-    "remons-components": "^0.0.1-beta"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",

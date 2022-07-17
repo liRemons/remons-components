@@ -10021,14 +10021,6 @@ remark@^13.0.0:
     remark-stringify "^9.0.0"
     unified "^9.1.0"
 
-remons-components@^0.0.1-beta:
-  version "0.0.1-beta"
-  resolved "https://registry.npmmirror.com/remons-components/-/remons-components-0.0.1-beta.tgz#e30552d432532fd5b8ba04215b146c02fff1b879"
-  integrity sha512-zBHIiDY9i7QK1HxSr2zh42UuxMunDZ7EFER20mUKaRbUr67EBbYkGXk8dHT3PLJoCdkcEFTiCOqgRb9pQlRrXw==
-  dependencies:
-    antd "^4.21.6"
-    react "^18.0.0"
-
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.npmmirror.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
