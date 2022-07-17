@@ -22,7 +22,7 @@
       var i = n(3066),
         r = n(67294),
         o = JSON.parse(
-          '{"menus":{"en-US":{"*":[{"path":"/","title":"\u4ecb\u7ecd","meta":{}},{"title":"FormItem","path":"/form-item","meta":{},"children":[]},{"title":"SearchForm","path":"/search-form","meta":{},"children":[]}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{},"title":"remons-componets","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"doc","repository":{"url":"","branch":"master"},"theme":{}}',
+          '{"menus":{"en-US":{"*":[{"path":"/","title":"\u4ecb\u7ecd","meta":{}},{"title":"FormItem","path":"/form-item","meta":{},"children":[]},{"title":"SearchForm","path":"/search-form","meta":{},"children":[]}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{},"title":"remons-componets","logo":"https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png","mode":"doc","repository":{"url":"","branch":"master"},"theme":{},"exportStatic":{}}',
         ),
         a = n(76905),
         d = n(78864),

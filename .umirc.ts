@@ -9,4 +9,7 @@ export default defineConfig({
   // more config: https://d.umijs.org/config,
   mfsu: {},
   dynamicImport: {},
+  base: '/remons-components',
+  publicPath: '/remons-components/',
+  exportStatic: {},
 });

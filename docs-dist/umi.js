@@ -585,7 +585,7 @@
           },
         });
         var r = n(83233),
-          o = { basename: '/' };
+          o = { basename: '/remons-components' };
         window.routerBase && (o.basename = window.routerBase);
         var i = { NODE_ENV: 'production' }.__IS_SERVER ? null : (0, r.lX)(o),
           a = function () {
@@ -22796,7 +22796,7 @@
       };
     })(),
     (function () {
-      n.p = '/';
+      n.p = '/remons-components/';
     })(),
     (function () {
       var e = function (e, t, n) {
