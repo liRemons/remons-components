@@ -1,6 +1,6 @@
 ## FormItem
 
-基于 antd from 封装的简洁表单
+基于 antd form 封装的简洁表单
 
 ##### component 字段默认提供了以下表单
 
@@ -20,6 +20,13 @@
 | upload        | Upload         |
 | treeSelect    | TreeSelect     |
 | cascader      | Cascader       |
+
+此外，为使用方便，还扩展了以下组件
+
+| 元素       | 对应组件   |
+| ---------- | ---------- |
+| rangeInput | RangeInput |
+| size       | SizeInput  |
 
 ##### 使用方式示例
 

@@ -2,8 +2,8 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   title: 'remons-components',
-  favicon: '/images/favicon.ico',
-  logo: '/images/logo.png',
+  favicon: 'https://liremons.github.io/remons-components/images/favicon.ico',
+  logo: 'https://liremons.github.io/remons-components/images/logo.png',
   outputPath: 'docs-dist',
   // more config: https://d.umijs.org/config,
   mfsu: {},

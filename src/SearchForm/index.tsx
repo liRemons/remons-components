@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, ButtonProps, FormProps, Row, Col, Space } from 'antd';
+import type { ButtonProps, FormProps } from 'antd';
+import { Form, Button, Row, Col, Space } from 'antd';
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
 import './index.less';
 

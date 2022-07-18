@@ -1,6 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Form, FormItemProps } from 'antd';
+import type { FormItemProps } from 'antd';
+import { Form } from 'antd';
 import { Com } from './const';
 
 interface IPropsOption {

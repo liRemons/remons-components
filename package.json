@@ -1,26 +1,39 @@
 {
   "name": "remons-components",
-  "version": "0.0.2-beta",
-  "scripts": {
-    "start": "dumi dev",
-    "dev": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist",
-    "build": "father build && dumi build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "prepublishOnly": "npm run build"
+  "version": "0.0.3-beta",
+  "keywords": [
+    "Antd",
+    "react",
+    "dumi",
+    "typescript"
+  ],
+  "homepage": "https://liremons.github.io/remons-components/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liRemons/remons-components.git"
   },
   "license": "MIT",
+  "author": {
+    "name": "remons",
+    "email": "remons@foxmail.com",
+    "url": "http://remons.cn"
+  },
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
   "files": [
     "dist"
   ],
-  "module": "dist/esm/index.js",
-  "typings": "dist/esm/index.d.ts",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "scripts": {
+    "build": "father build && dumi build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "dev": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "prepublishOnly": "npm run build",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "start": "dumi dev",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -33,7 +46,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.21.6",
-    "express": "^4.18.1",
     "react": "^18.0.0"
   },
   "devDependencies": {
@@ -48,5 +60,8 @@
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
     "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   }
 }

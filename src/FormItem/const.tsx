@@ -12,6 +12,8 @@ import {
   TreeSelect,
   Cascader,
 } from 'antd';
+import SizeInput from '../SizeInput';
+import RangeInput from '../RangeInput';
 import { ReactElement } from 'react';
 const { TextArea } = Input;
 
@@ -34,4 +36,6 @@ export const Com: ComType = {
   upload: Upload,
   treeSelect: TreeSelect,
   cascader: Cascader,
+  size: SizeInput,
+  rangeInput: RangeInput,
 };

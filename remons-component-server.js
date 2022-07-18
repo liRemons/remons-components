@@ -1,7 +1,9 @@
 const express = require('express');
+const history = require('connect-history-api-fallback');
 const path = require('path');
 const app = express();
 const port = 8001;
+app.use(history());
 app.use(express.static('docs-dist', { maxAge: 1000 * 3600 }));
 app.get('*', (req, res) => {
   const pathUrl = req.url.replace(/\/remons-components/, 'docs-dist');
@@ -10,4 +12,4 @@ app.get('*', (req, res) => {
   );
 });
 
-app.listen(port, () => console.log(`Example app listening on port port!`));
+app.listen(port, () => console.log(`Example app listening on port! http://localhost:${port}`));
