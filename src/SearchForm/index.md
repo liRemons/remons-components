@@ -24,7 +24,7 @@ export default () => {
     console.log(values);
   };
   return (
-    <SearchForm cols={3} rows={2} onSearch={onSearch}>
+    <SearchForm cols={4} rows={2} onSearch={onSearch}>
       {items.map((item) => (
         <FormItem {...item} key={item.name} />
       ))}

@@ -8,6 +8,10 @@ export default defineConfig({
   // more config: https://d.umijs.org/config,
   mfsu: {},
   dynamicImport: {},
+  locales: [
+    ['zh-CN', '中文'],
+    ['en-US', 'English'],
+  ],
   base: '/remons-components/',
   publicPath: '/remons-components/',
   exportStatic: {},

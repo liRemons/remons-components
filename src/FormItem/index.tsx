@@ -23,6 +23,8 @@ interface IPropsOption {
     | 'upload'
     | 'treeSelect'
     | 'cascader'
+    | 'size'
+    | 'rangeInput'
     | any;
   /**
    * @description 透传到 FormItem 使用组件的参数
