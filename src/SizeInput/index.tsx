@@ -31,6 +31,10 @@ interface IProps {
    * @description 单位，可选
    */
   unit?: Array<string>;
+  /**
+   * @description 连接符号
+   */
+  connectSymbol?: string;
 }
 
 /**
@@ -44,6 +48,7 @@ const SizeInput: React.FC<IProps> = ({
   numberInputProps = {},
   onChange,
   unit = ['m', 'cm', 'mm'],
+  connectSymbol = '-',
 }) => {
   /**
    * @description: 数据改变触发
@@ -68,7 +73,7 @@ const SizeInput: React.FC<IProps> = ({
             placeholder={placeholder[index]}
             {...numberInputProps}
           />
-          {index < count - 1 ? ' - ' : ''}
+          {index < count - 1 ? ` ${connectSymbol} ` : ''}
         </span>
       ))}
     </div>
