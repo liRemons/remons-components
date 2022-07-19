@@ -30,7 +30,7 @@ interface IProps {
   /**
    * @description 单位，可选
    */
-  unit?: string;
+  unit?: Array<string>;
 }
 
 /**

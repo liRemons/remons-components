@@ -8,7 +8,7 @@ type SearchBtnProps = {
   /**
    * @description 按钮的文字
    */
-  text?: string;
+  text?: string | React.ReactNode;
   /**
    * @description 是否展示
    */
@@ -50,11 +50,11 @@ export interface PropsTypes {
    */
   children?: any;
   /**
-   * @description 每行所容纳的 form item
+   * @description 默认展开的行数（其余默认收起）
    */
   rows?: 2 | 3;
   /**
-   * @description 默认展开的行数（其余默认收起）
+   * @description 默认每行展示的列数（一行的 FormItem 数量）
    */
   cols?: 2 | 3 | 4;
   /**
@@ -65,6 +65,10 @@ export interface PropsTypes {
    * @description 重置的字段
    */
   resetNames?: Array<string>;
+  /**
+   * @description 按钮位置
+   */
+  buttonAlign?: 'left' | 'center' | 'right';
 }
 
 type IProps = FormProps & PropsTypes;
@@ -86,10 +90,11 @@ const SearchForm: React.FC<IProps> = ({
   children = [],
   cols = 3,
   rows = 2,
-  submitProps,
-  cancelProps,
+  submitProps = {},
+  cancelProps = {},
   foldProps = {},
   resetNames,
+  buttonAlign = 'center',
 }) => {
   const [form] = Form.useForm();
   const [fold, setFold] = useState<boolean>(true);
@@ -117,21 +122,25 @@ const SearchForm: React.FC<IProps> = ({
    */
   const renderSearchBtn = () => {
     return (
-      <div className="searchForm-button">
+      <div className="searchForm-button" style={{ textAlign: buttonAlign }}>
         <Space>
-          <Button type="primary" htmlType="submit" {...(submitProps || {})}>
-            {submitProps?.text || '查询'}
-          </Button>
-          <Button
-            htmlType="button"
-            {...(cancelProps || {})}
-            onClick={() => {
-              form.resetFields(resetNames);
-              onReset?.();
-            }}
-          >
-            {cancelProps?.text || '重置'}
-          </Button>
+          {submitProps?.isShow !== false && (
+            <Button type="primary" htmlType="submit" {...submitProps}>
+              {submitProps?.text || '查询'}
+            </Button>
+          )}
+          {cancelProps?.isShow !== false && (
+            <Button
+              htmlType="button"
+              {...cancelProps}
+              onClick={() => {
+                form.resetFields(resetNames);
+                onReset?.();
+              }}
+            >
+              {cancelProps?.text || '重置'}
+            </Button>
+          )}
         </Space>
       </div>
     );

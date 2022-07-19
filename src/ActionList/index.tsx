@@ -2,7 +2,7 @@ import React from 'react';
 import type { ButtonProps, MenuProps, DropDownProps } from 'antd';
 import { Button, Dropdown, Menu, Space } from 'antd';
 
-type ActionTypeProps = {
+export type ActionTypeProps = {
   /**
    * @description 唯一键
    */
@@ -17,7 +17,7 @@ type ActionTypeProps = {
   children?: Array<any>;
 };
 
-type ActionType = ActionTypeProps & ButtonProps;
+export type ActionType = ActionTypeProps & ButtonProps;
 
 export interface IProps {
   /**
