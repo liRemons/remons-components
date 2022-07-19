@@ -24,7 +24,7 @@ npm i remons-components
 
 ##### 为何不是？
 
-现有的基于 Ant Design 扩展的组件库，以 ProComponents 为例首先，`ProComponents` 提供了许多优秀的、开箱即用的组件
+现有的基于 Ant Design 扩展的组件库，以 ProComponents 为例，`ProComponents` 提供了许多优秀的、开箱即用的组件
 
 1. `ProComponents` 对组件书写方式，相比于 Ant Design 改动很大，无疑使得开发者增加了学习成本。
 2. 许多配置个人体验来说更舒服，但 `ProComponents` 并未提供扩展方式。
