@@ -4,33 +4,33 @@
 
 ##### component 字段默认提供了以下表单
 
-| 元素            | 对应 antd 组件 |
-| ---------------| -------------- |
-| input          | Input          |
-| inputPassword  | Input.Password |
-| inputNumber    | InputNumber    |
-| textarea       | TextArea       |
-| datePicker     | DatePicker     |
-| rangePicker    | RangePicker    |
-| timePicker     | TimePicker     |
-| rangeTimePicker| RangeTimePicker|
-| select         | Select         |
-| radio          | Radio          |
-| radioGroup     | RadioGroup     |
-| checkbox       | Checkbox       |
-| checkboxGroup  | CheckboxGroup  |
-| rate           | Rate           |
-| slider         | Slider         |
-| upload         | Upload         |
-| treeSelect     | TreeSelect     |
-| cascader       | Cascader       |
-| transfer       | Transfer       |
-| switch         | Switch         |
-| mentions       | Mentions       |
+| 元素            | 对应 antd 组件  |
+| --------------- | --------------- |
+| input           | Input           |
+| inputPassword   | Input.Password  |
+| inputNumber     | InputNumber     |
+| textarea        | TextArea        |
+| datePicker      | DatePicker      |
+| rangePicker     | RangePicker     |
+| timePicker      | TimePicker      |
+| rangeTimePicker | RangeTimePicker |
+| select          | Select          |
+| radio           | Radio           |
+| radioGroup      | RadioGroup      |
+| checkbox        | Checkbox        |
+| checkboxGroup   | CheckboxGroup   |
+| rate            | Rate            |
+| slider          | Slider          |
+| upload          | Upload          |
+| treeSelect      | TreeSelect      |
+| cascader        | Cascader        |
+| transfer        | Transfer        |
+| switch          | Switch          |
+| mentions        | Mentions        |
 
 此外，为使用方便，还扩展了以下组件
 
-| 元素        | 对应组件    |
+| 元素       | 对应组件   |
 | ---------- | ---------- |
 | rangeInput | RangeInput |
 | size       | SizeInput  |
@@ -113,12 +113,11 @@ const mockTransferData = Array.from({
   description: `description of content${i + 1}`,
 }));
 
-
 const mentionsOptions = [
   { value: 'test1', label: 'test1' },
   { value: 'test2', label: 'test2' },
   { value: 'test3', label: 'test3' },
-]
+];
 
 const layout = {
   labelCol: { span: 4 },
@@ -126,15 +125,19 @@ const layout = {
 };
 
 const items = [
-  { 
-    label: 'upload', 
-    component: 'upload', 
-    valuePropName: 'fileList', 
-    name: 'fileList', 
+  {
+    label: 'upload',
+    component: 'upload',
+    valuePropName: 'fileList',
+    name: 'fileList',
     componentProps: {
-      listType: 'picture-card', 
-      children: <div><PlusOutlined /></div>
-    } 
+      listType: 'picture-card',
+      children: (
+        <div>
+          <PlusOutlined />
+        </div>
+      ),
+    },
   },
   { label: 'input', component: 'input' },
   { label: 'inputPassword', component: 'inputPassword' },
@@ -154,23 +157,25 @@ const items = [
   { label: 'radio', component: 'radio', componentProps: { children: '测试' } },
   { label: 'radioGroup', component: 'radioGroup', componentProps: { options: radioOptions } },
   { label: 'checkbox', component: 'checkbox', componentProps: { children: '测试' } },
-  { label: 'checkboxGroup', 
-    component: 'checkboxGroup', 
-    componentProps: { 
-      options: ['Apple', 'Pear', 'Orange'] 
-    }
+  {
+    label: 'checkboxGroup',
+    component: 'checkboxGroup',
+    componentProps: {
+      options: ['Apple', 'Pear', 'Orange'],
+    },
   },
   { label: 'rate', component: 'rate' },
   { label: 'slider', component: 'slider' },
   { label: 'treeSelect', component: 'treeSelect', componentProps: { treeData } },
   { label: 'cascader', component: 'cascader', componentProps: { options: cascaderOptions } },
-  { label: 'transfer', 
-    component: 'transfer', 
-    componentProps: { 
-      dataSource: mockTransferData, 
+  {
+    label: 'transfer',
+    component: 'transfer',
+    componentProps: {
+      dataSource: mockTransferData,
       titles: ['Source', 'Target'],
-      render: (item) => item.title
-    }
+      render: (item) => item.title,
+    },
   },
   { label: 'switch', component: 'switch' },
   { label: 'size', component: 'size' },
@@ -187,8 +192,8 @@ export default () => (
 );
 ```
 
-<API exports='["IPropsOption"]'></API>
-
 <Alert type="info">
-  其余字段请参考 antd Form.Item
+  继承自 antd Form.Item API, 支持传入 Form.Item API API
 </Alert>
+
+<API exports='["IPropsOption"]'></API>

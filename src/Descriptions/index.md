@@ -41,4 +41,8 @@ export default () => {
 };
 ```
 
+<Alert type="info">
+  继承自 antd Descriptions API, 支持传入 Descriptions API
+</Alert>
+
 <API exports='["IPropsOptions", "DescriptionsItemType"]'></API>
