@@ -14,17 +14,25 @@ interface IPropsOption {
     | 'textarea'
     | 'inputNumber'
     | 'datePicker'
+    | 'rangePicker'
+    | 'timePicker'
+    | 'rangeTimePicker'
     | 'select'
     | 'radio'
+    | 'radioGroup'
     | 'checkbox'
+    | 'checkboxGroup'
     | 'rate'
     | 'slider'
-    | 'timePicker'
     | 'upload'
     | 'treeSelect'
     | 'cascader'
     | 'size'
     | 'rangeInput'
+    | 'radioGroup'
+    | 'switch'
+    | 'transfer'
+    | 'mentions'
     | any;
   /**
    * @description 透传到 FormItem 使用组件的参数
@@ -45,6 +53,7 @@ const MyForm: React.FC<IProps> = ({ component, componentProps, children, ...othe
       ReCompont = component;
     }
   }
+
 
   return (
     <Form.Item {...others}>
