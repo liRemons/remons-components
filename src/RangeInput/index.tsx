@@ -1,7 +1,7 @@
 import React from 'react';
 import type { InputProps } from 'antd';
 import { Input } from 'antd';
-import './index.less';
+import './index.css';
 
 export interface RangeInputProps {
   /**

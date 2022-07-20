@@ -1,7 +1,7 @@
 import React from 'react';
 import type { AffixProps } from 'antd';
 import { Space, Affix } from 'antd';
-import './index.less';
+import './index.css';
 
 interface IProps {
   /**

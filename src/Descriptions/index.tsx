@@ -37,7 +37,7 @@ interface IPropsOptions {
   /**
    * @description 解析的数据
    */
-  parseDataSource: Array<DescriptionsItemType>;
+  columns: Array<DescriptionsItemType>;
 }
 
 /**
@@ -51,10 +51,10 @@ type IProps = IPropsOptions & DescriptionsProps;
 /**
  * @description: 组件代码
  */
-const MyDescriptions: React.FC<IProps> = ({ dataSource, parseDataSource, ...others }) => {
+const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, ...others }) => {
   return (
     <Descriptions {...others}>
-      {parseDataSource.map((item: DescriptionsItemType) => {
+      {columns.map((item: DescriptionsItemType) => {
         const { label, name, render, ...itemOther } = item;
         return (
           <Descriptions.Item label={label} key={name} {...itemOther}>

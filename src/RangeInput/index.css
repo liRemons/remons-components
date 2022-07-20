@@ -1,0 +1,34 @@
+.range-input {
+  display: flex;
+  align-items: center;
+}
+
+.range-input .ant-input-group-wrapper {
+  width: auto;
+
+  
+}
+
+.range-input .ant-input-group-wrapper  .ant-input-group-addon {
+  padding: 0 8px;
+}
+
+.range-input .ant-input-group-wrapper  .ant-input-show-count-suffix {
+  font-size: 12px;
+}
+
+.range-input .ant-input-group-wrapper .ant-input-group {
+  width: auto;
+}
+
+.range-input .ant-input-group-wrapper .ant-input-group .ant-input {
+  width: 80px;
+}
+
+.range-input .ant-input-affix-wrapper {
+  width: auto;
+}
+
+.range-input .ant-input {
+  width: 80px;
+}

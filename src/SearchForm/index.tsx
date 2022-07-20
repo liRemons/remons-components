@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { ButtonProps, FormProps } from 'antd';
 import { Form, Button, Row, Col, Space } from 'antd';
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
-import './index.less';
+import './index.css';
 
 type SearchBtnProps = {
   /**

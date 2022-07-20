@@ -23,7 +23,7 @@ const dataSource = {
   month: 1658217401814,
 };
 
-const parseDataSource = [
+const columns = [
   { label: '用户名', name: 'username' },
   { label: '联系方式', name: 'tel' },
   { label: '居住地', name: 'live' },
@@ -37,9 +37,7 @@ const parseDataSource = [
 ];
 
 export default () => {
-  return (
-    <Descriptions bordered title="测试" dataSource={dataSource} parseDataSource={parseDataSource} />
-  );
+  return <Descriptions bordered title="测试" dataSource={dataSource} columns={columns} />;
 };
 ```
 

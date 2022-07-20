@@ -1,6 +1,6 @@
 {
   "name": "remons-components",
-  "version": "0.0.6-beta",
+  "version": "0.1.0-rc.1",
   "keywords": [
     "Antd",
     "react",
@@ -24,7 +24,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "father build && dumi build",
+    "build": "father build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "dev": "dumi dev",
     "docs:build": "dumi build",
@@ -46,10 +46,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.21.6",
-    "react": "^18.0.0",
-    "compression": "^1.7.4",
-    "connect-history-api-fallback": "^2.0.0",
-    "express": "^4.18.1"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",

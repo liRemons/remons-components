@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ActionType, IProps } from '../ActionList';
 import ActionList from '../ActionList';
-import './index.less';
+import './index.css';
 
 interface IPropsType extends Omit<IProps, 'actions'> {
   /**
