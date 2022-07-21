@@ -76,7 +76,7 @@ const RangeInput: React.FC<RangeInputProps> = ({
         onChange={changeStart}
         {...startInputProps}
       />
-      {` ${connectSymbol} `}
+      &nbsp;{` ${connectSymbol} `}&nbsp;
       <Input
         placeholder={endPlaceholder}
         defaultValue={endDefaultValue}

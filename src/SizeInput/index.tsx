@@ -47,7 +47,7 @@ const SizeInput: React.FC<IProps> = ({
   defaultValue = [],
   numberInputProps = {},
   onChange,
-  unit = ['m', 'cm', 'mm'],
+  unit = [],
   connectSymbol = '-',
 }) => {
   /**
@@ -65,8 +65,8 @@ const SizeInput: React.FC<IProps> = ({
       {[...Array(count)].map((item: any, index: number) => (
         <span key={index}>
           <InputNumber
-            formatter={(value) => `${value}${unit[index]}`}
-            parser={(value) => value!.replace(`${unit[index]}`, '')}
+            formatter={(value) => `${value}${unit[index] || ''}`}
+            parser={(value) => value!.replace(`${unit[index] || ''}`, '')}
             onChange={(val) => handleChange(val, index)}
             value={value[index]}
             defaultValue={defaultValue[index]}

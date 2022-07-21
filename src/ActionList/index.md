@@ -25,7 +25,6 @@ export default () => {
     {
       label: '测试3',
       key: 'test3',
-      type: 'link',
       children: [
         {
           key: 'test3-1',

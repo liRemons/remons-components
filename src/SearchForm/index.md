@@ -34,7 +34,7 @@ export default () => {
 ```
 
 <Alert type="info">
-  继承自 antd Form API, 支持传入 Form API API
+  继承自 antd Form API, 支持传入 Form API
 </Alert>
 
 <API exports='["IPropsOptions", "SearchButtonProps", "FoldProps"]'></API>

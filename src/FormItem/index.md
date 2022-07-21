@@ -193,7 +193,7 @@ export default () => (
 ```
 
 <Alert type="info">
-  继承自 antd Form.Item API, 支持传入 Form.Item API API
+  继承自 antd Form.Item API, 支持传入 Form.Item API
 </Alert>
 
 <API exports='["IPropsOption"]'></API>
