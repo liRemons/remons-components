@@ -4,6 +4,8 @@ import type { FormItemProps } from 'antd';
 import { Form } from 'antd';
 import { Com } from './const';
 
+const { Item } = Form;
+
 interface IPropsOption {
   /**
    * @description 所支持的组件类型
@@ -44,7 +46,7 @@ export const IPropsOption = (props: IPropsOption) => null;
 
 type IProps = IPropsOption & FormItemProps;
 
-const MyForm: React.FC<IProps> = ({ component, componentProps, children, ...others }) => {
+const FormItem: React.FC<IProps> = ({ component, componentProps, children, ...others }) => {
   let ReCompont = null;
   if (component) {
     if (typeof component === 'string') {
@@ -54,7 +56,6 @@ const MyForm: React.FC<IProps> = ({ component, componentProps, children, ...othe
     }
   }
 
-
   return (
     <Form.Item {...others}>
       {ReCompont ? <ReCompont {...componentProps}></ReCompont> : children}
@@ -62,4 +63,5 @@ const MyForm: React.FC<IProps> = ({ component, componentProps, children, ...othe
   );
 };
 
-export default MyForm;
+Object.assign(FormItem, Item);
+export default FormItem;

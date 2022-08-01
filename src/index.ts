@@ -7,3 +7,4 @@ export { default as ButtonBar } from './ButtonBar';
 export { default as ToolBar } from './ToolBar';
 export { default as Descriptions } from './Descriptions';
 export { default as Mentions } from './Mentions';
+export { default as Form } from './Form';
