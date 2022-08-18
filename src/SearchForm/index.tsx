@@ -95,6 +95,7 @@ const SearchForm: React.FC<IProps> = ({
   foldProps = {},
   resetNames,
   buttonAlign = 'center',
+  ...others
 }) => {
   const [form] = Form.useForm();
   const [fold, setFold] = useState<boolean>(true);
@@ -147,7 +148,7 @@ const SearchForm: React.FC<IProps> = ({
   };
 
   return (
-    <Form form={form} onFinish={onSearch}>
+    <Form {...others} form={form} onFinish={onSearch}>
       <Row gutter={24}>
         {(fold ? childrenFold : children).map((child: JSX.Element, index: number) => (
           <Col key={index} span={colSpan}>

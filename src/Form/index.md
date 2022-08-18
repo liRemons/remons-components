@@ -18,10 +18,25 @@ export default () => {
     form.setFieldsValue({ test: 1 });
   }, []);
 
-  const items = [{ label: '测试', name: 'test', component: 'input' }];
+  const items = [
+    { label: '测试', name: 'test', component: 'input' },
+    { label: '测试1', name: 'test1', component: 'input' },
+    { label: '测试2', name: 'test2', component: 'input' },
+    { label: '测试3', name: 'test3', component: 'input' },
+    { label: '测试4', name: 'test4', component: 'input' },
+  ];
+
+  const formLayout = {
+    labelCol: {
+      span: 8,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
 
   return (
-    <Form form={form} isPreview>
+    <Form {...formLayout} cols={3} isPreview form={form} labelAlign="right" size="small">
       {items.map((item) => (
         <FormItem key={item.name} {...item} />
       ))}
