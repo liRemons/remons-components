@@ -2,10 +2,6 @@
 
 结合自己使用经历，基于 Ant Design 封装的简洁用法组件
 
-<Alert type="warning">
-  注意：目前 beta 阶段，切勿直接用于生产环境！！！
-</Alert>
-
 ##### 如何使用
 
 ```bash

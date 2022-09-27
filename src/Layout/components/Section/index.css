@@ -1,0 +1,25 @@
+.panel {
+  padding: 10px ;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 10%) 0px 2px 8px 0px;
+  border-radius: 8px;
+  margin: 16px 20px 0px
+}
+
+.section .title {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.section .subTitle {
+  font-weight: normal;
+  font-size: 12px;
+  padding-left: 6px;
+  color: #666;
+}
+
+.section .main {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
