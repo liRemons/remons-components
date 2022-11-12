@@ -1,6 +1,6 @@
 {
   "name": "remons-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "Antd",
     "react",
@@ -16,7 +16,7 @@
   "author": {
     "name": "remons",
     "email": "remons@foxmail.com",
-    "url": "http://remons.cn"
+    "url": "https://www.remons.cn"
   },
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "antd": "^4.21.6",
-    "react": "^18.0.0"
+    "antd": "^4.24.1",
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",
