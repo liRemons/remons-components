@@ -25,7 +25,7 @@ const MyForm: React.FC<IPropsType> = ({ children, isPreview = false, cols, ...ot
       componentProps: {
         bordered: !isPreview,
         disabled: isPreview,
-        ...child.props.componentProps,
+        ...(child?.props?.componentProps || {}),
       },
     }),
   );

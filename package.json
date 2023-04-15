@@ -1,6 +1,6 @@
 {
   "name": "remons-components",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "keywords": [
     "Antd",
     "react",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "antd": "^4.24.1",
+    "antd": "^5.4.2",
     "react": "^17.0.2"
   },
   "devDependencies": {

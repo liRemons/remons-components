@@ -14,21 +14,29 @@ export interface SectionProps {
    * @description 副标题
    */
   subTitle?: React.ReactNode;
+  /**
+   * @description class
+   */
+  className?: string;
+
   children?: React.ReactNode;
 }
 
 const Section: React.FC<SectionProps> = ({
   shape = 'panel',
   title = '',
+  className = '',
   subTitle = '',
   children,
 }) => {
   return (
-    <div className={`${shape} section`}>
-      <div className="title">
-        {title}
-        <span className="subTitle">{subTitle}</span>
-      </div>
+    <div className={`${shape} section ${className}`}>
+      {title && (
+        <div className="title">
+          {title}
+          {subTitle && <span className="subTitle">{subTitle}</span>}
+        </div>
+      )}
       {children && <div className="main">{children}</div>}
     </div>
   );

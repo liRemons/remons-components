@@ -1,5 +1,4 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import type { FormItemProps } from 'antd';
 import { Form } from 'antd';
 import { Com } from './const';
