@@ -20,7 +20,8 @@ export default () => {
       defaultValue={val}
       onChange={handleChange}
       value={val}
-      numberInputProps={{ min: 0, step: 0.5 }}
+      unit={['m', 'cm', 'mm']}
+      numberInputProps={[{ min: 0, step: 0.5 }]}
     />
   );
 };

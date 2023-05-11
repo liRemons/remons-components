@@ -16,9 +16,9 @@ interface IProps {
    */
   count?: 2 | 3 | 4;
   /**
-   * @description 透传给输入框的属性集，继承自 antd InputNumber API
+   * @description 透传给输入框的属性集，继承自 antd InputNumber API，传入数组则分别对每个 input 设置
    */
-  numberInputProps?: InputNumberProps;
+  numberInputProps?: InputNumberProps | Array<InputNumberProps>;
   /**
    * @description 输入提示
    */
@@ -71,7 +71,8 @@ const SizeInput: React.FC<IProps> = ({
             value={value[index]}
             defaultValue={defaultValue[index]}
             placeholder={placeholder[index]}
-            {...numberInputProps}
+            {...((numberInputProps instanceof Array ? numberInputProps[index] : numberInputProps) ||
+              {})}
           />
           {index < count - 1 ? ` ${connectSymbol} ` : ''}
         </span>
