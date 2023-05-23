@@ -1,6 +1,7 @@
 import React from 'react';
 import type { DescriptionsProps } from 'antd';
 import { Descriptions } from 'antd';
+import get from 'lodash.get';
 
 interface DescriptionsItemType {
   /**
@@ -58,7 +59,7 @@ const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, ...others }) =>
         const { label, name, render, ...itemOther } = item;
         return (
           <Descriptions.Item label={label} key={name} {...itemOther}>
-            {render ? render(name, dataSource[name], dataSource) : dataSource[name]}
+            {render ? render(name, dataSource[name], dataSource) : get(dataSource, name)}
           </Descriptions.Item>
         );
       })}

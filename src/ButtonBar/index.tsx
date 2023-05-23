@@ -24,6 +24,10 @@ interface IProps {
    * @description 按钮位置
    */
   align?: 'left' | 'center' | 'right';
+  /**
+   * @description 是否固定粘性定位
+   */
+  isAffix?: boolean;
 }
 
 const ButtonBar: React.FC<IProps> = ({
@@ -32,17 +36,20 @@ const ButtonBar: React.FC<IProps> = ({
   bordered = true,
   background = '#fff',
   align = 'center',
+  isAffix = true,
 }) => {
-  return (
-    <Affix {...affixProps}>
+  const renderChildren = () => {
+    return (
       <div
         style={{ background, textAlign: align }}
         className={['button-bar', bordered ? 'border' : ''].join(' ')}
       >
         <Space>{children}</Space>
       </div>
-    </Affix>
-  );
+    );
+  };
+
+  return isAffix ? <Affix {...affixProps}>{renderChildren()}</Affix> : renderChildren();
 };
 
 export default ButtonBar;

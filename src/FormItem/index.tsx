@@ -39,13 +39,24 @@ interface IPropsOption {
    * @description 透传到 FormItem 使用组件的参数
    */
   componentProps?: object;
+
+  /**
+   * @description 是否必填，透传至 rule
+   */
+  required?: boolean;
 }
 
 export const IPropsOption = (props: IPropsOption) => null;
 
 type IProps = IPropsOption & FormItemProps;
 
-const FormItem: React.FC<IProps> = ({ component, componentProps, children, ...others }) => {
+const FormItem: React.FC<IProps> = ({
+  component,
+  required,
+  componentProps,
+  children,
+  ...others
+}) => {
   let ReCompont = null;
   if (component) {
     if (typeof component === 'string') {
@@ -55,8 +66,20 @@ const FormItem: React.FC<IProps> = ({ component, componentProps, children, ...ot
     }
   }
 
+  const props = required
+    ? {
+        required,
+        rules: [
+          {
+            required,
+          },
+          ...(others.rules || []),
+        ],
+      }
+    : {};
+
   return (
-    <Form.Item {...others}>
+    <Form.Item {...props} {...others}>
       {ReCompont ? <ReCompont {...componentProps}></ReCompont> : children}
     </Form.Item>
   );

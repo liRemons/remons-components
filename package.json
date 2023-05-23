@@ -1,6 +1,6 @@
 {
   "name": "remons-components",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "keywords": [
     "Antd",
     "react",
@@ -26,12 +26,12 @@
   "scripts": {
     "build": "father build",
     "deploy": "npm run docs:build && npm run docs:deploy",
-    "dev": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist",
+    "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && dumi dev",
+    "docs:build": "SET NODE_OPTIONS=--openssl-legacy-provider && dumi build",
+    "docs:deploy": "SET NODE_OPTIONS=--openssl-legacy-provider && gh-pages -d docs-dist",
     "prepublishOnly": "npm run build",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "start": "dumi dev",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && dumi dev",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@types/lodash.get": "^4.4.7",
     "antd": "^5.4.2",
     "react": "^17.0.2"
   },

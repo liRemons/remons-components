@@ -10,7 +10,6 @@ npm i remons-components
 
 请访问官网
 
-- [GitHub 托管](https://liremons.github.io/remons-components/)
 - [个人网站托管](http://remons.cn:8001/remons-components/)
 
 ##### 基本思想

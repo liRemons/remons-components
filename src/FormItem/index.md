@@ -39,7 +39,7 @@
 
 ```tsx
 import React from 'react';
-import { Form, Upload } from 'antd';
+import { Form, Upload, Button } from 'antd';
 import { FormItem } from 'remons-components';
 import { PlusOutlined } from '@ant-design/icons';
 
@@ -139,7 +139,7 @@ const items = [
       ),
     },
   },
-  { label: 'input', component: 'input' },
+  { label: 'input', component: 'input', name: 'input', required: true },
   { label: 'inputPassword', component: 'inputPassword' },
   { label: 'inputNumber', component: 'inputNumber', componentProps: { min: 0 } },
   { label: 'textarea', component: 'textarea' },
@@ -183,13 +183,26 @@ const items = [
   { label: 'mentions', component: 'mentions', componentProps: { options: mentionsOptions } },
 ];
 
-export default () => (
-  <Form {...layout}>
-    {items.map((item) => (
-      <FormItem key={item.label} {...item} />
-    ))}
-  </Form>
-);
+export default () => {
+  const [form] = Form.useForm();
+
+  const submit = async () => {
+    try {
+      const values = await form.validateFields();
+      console.log(values);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (
+    <Form {...layout} form={form}>
+      {items.map((item) => (
+        <FormItem key={item.label} {...item} />
+      ))}
+      <Button onClick={submit}>提交</Button>
+    </Form>
+  );
+};
 ```
 
 <Alert type="info">

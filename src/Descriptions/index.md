@@ -5,7 +5,7 @@
 基于 antd Descriptions 封装，可以指定数据源和字段名，组件会自动解析
 
 <Alert type="info">
-  后续考虑支持解析链式字段，例如 a.b.c
+  支持解析链式字段，例如 a.b.c
 </Alert>
 
 #### 使用示例
@@ -21,13 +21,16 @@ const dataSource = {
   remark: 'empty',
   address: 'No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China',
   month: 1658217401814,
+  others: {
+    nickName: 'remons',
+  },
 };
 
 const columns = [
   { label: '用户名', name: 'username' },
   { label: '联系方式', name: 'tel' },
   { label: '居住地', name: 'live' },
-  { label: '备注', name: 'remark' },
+  { label: '昵称', name: 'others.nickName' },
   { label: '地址', name: 'address', span: 2 },
   {
     label: '当前月份',
