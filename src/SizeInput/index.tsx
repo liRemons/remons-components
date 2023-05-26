@@ -49,6 +49,7 @@ const SizeInput: React.FC<IProps> = ({
   onChange,
   unit = [],
   connectSymbol = '-',
+  ...others
 }) => {
   /**
    * @description: 数据改变触发
@@ -61,7 +62,7 @@ const SizeInput: React.FC<IProps> = ({
     onChange?.(newValue);
   };
   return (
-    <div>
+    <div {...others}>
       {[...Array(count)].map((item: any, index: number) => (
         <span key={index}>
           <InputNumber

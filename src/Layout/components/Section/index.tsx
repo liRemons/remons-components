@@ -28,9 +28,10 @@ const Section: React.FC<SectionProps> = ({
   className = '',
   subTitle = '',
   children,
+  ...others
 }) => {
   return (
-    <div className={`${shape} section ${className}`}>
+    <div className={`${shape} section ${className}`} {...others}>
       {title && (
         <div className="title">
           {title}

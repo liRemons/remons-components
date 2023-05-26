@@ -43,7 +43,12 @@ export const IProps = (props: IProps) => null;
 /**
  * @description: 组件
  */
-const ActionList: React.FC<IProps> = ({ actions = [], onActionClick, menuTrigger = ['click'] }) => {
+const ActionList: React.FC<IProps> = ({
+  actions = [],
+  onActionClick,
+  menuTrigger = ['click'],
+  ...others
+}) => {
   const onMenuClick: any = ({ key }: any, data: object) => {
     onActionClick?.(key, data);
   };
@@ -57,7 +62,7 @@ const ActionList: React.FC<IProps> = ({ actions = [], onActionClick, menuTrigger
     <Menu onClick={(e) => onMenuClick(e, item)} items={data} />
   );
   return (
-    <Space>
+    <Space {...others}>
       {actions.map((item: ActionType) => {
         if (!item.children?.length) {
           return (

@@ -16,16 +16,22 @@ interface IPropsType extends Omit<IProps, 'actions'> {
    * @description 是否显示下边框
    */
   bordered?: boolean;
+  /**
+   * @description className
+   */
+  className?: string;
 }
 
 const ToolBar: React.FC<IPropsType> = ({
   rightActionList = [],
   leftActionList = [],
   bordered = true,
+  className,
   ...others
 }) => {
+  const classNames = `${['toolbar', bordered ? 'border' : ''].join(' ')} ${className}`;
   return (
-    <div className={['toolbar', bordered ? 'border' : ''].join(' ')}>
+    <div className={classNames} {...others}>
       {[leftActionList, rightActionList].map((actions, index) => (
         <ActionList key={index} actions={actions} {...others} />
       ))}

@@ -32,6 +32,10 @@ export interface RangeInputProps {
    * @description 连接符号
    */
   connectSymbol?: string;
+  /**
+   * @description className
+   */
+  className?: string;
 }
 
 /**
@@ -45,6 +49,8 @@ const RangeInput: React.FC<RangeInputProps> = ({
   endInputProps = {},
   placeholder = ['开始值', '结束值'],
   connectSymbol = '-',
+  className,
+  ...others
 }) => {
   const [startVal, endVal] = value;
   const [startDefaultValue, endDefaultValue] = defaultValue;
@@ -68,7 +74,7 @@ const RangeInput: React.FC<RangeInputProps> = ({
   };
 
   return (
-    <div className="range-input">
+    <div className={['range-input', className].join(' ')} {...others}>
       <Input
         placeholder={startPlaceholder}
         defaultValue={startDefaultValue}

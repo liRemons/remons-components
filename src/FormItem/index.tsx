@@ -44,6 +44,10 @@ interface IPropsOption {
    * @description 是否必填，透传至 rule
    */
   required?: boolean;
+  /**
+   * @description placeholder
+   */
+  placeholder?: string;
 }
 
 export const IPropsOption = (props: IPropsOption) => null;
@@ -54,6 +58,7 @@ const FormItem: React.FC<IProps> = ({
   component,
   required,
   componentProps,
+  placeholder,
   children,
   ...others
 }) => {
@@ -66,21 +71,22 @@ const FormItem: React.FC<IProps> = ({
     }
   }
 
-  const props = required
-    ? {
-        required,
-        rules: [
-          {
-            required,
-          },
-          ...(others.rules || []),
-        ],
-      }
-    : {};
-
+  let props = {
+    ...(required
+      ? {
+          required,
+          rules: [
+            {
+              required,
+            },
+            ...(others.rules || []),
+          ],
+        }
+      : {}),
+  };
   return (
     <Form.Item {...props} {...others}>
-      {ReCompont ? <ReCompont {...componentProps}></ReCompont> : children}
+      {ReCompont ? <ReCompont {...{ componentProps, placeholder }}></ReCompont> : children}
     </Form.Item>
   );
 };
