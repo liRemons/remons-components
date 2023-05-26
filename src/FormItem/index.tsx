@@ -86,7 +86,7 @@ const FormItem: React.FC<IProps> = ({
   };
   return (
     <Form.Item {...props} {...others}>
-      {ReCompont ? <ReCompont {...{ componentProps, placeholder }}></ReCompont> : children}
+      {ReCompont ? <ReCompont {...{ ...componentProps, placeholder }}></ReCompont> : children}
     </Form.Item>
   );
 };
