@@ -13,13 +13,26 @@ interface IProps {
    */
   cols?: 2 | 3 | 4;
   children?: React.ReactNode | any;
+  /**
+   * @description ref 透传
+   */
+  forwardedRef?: any;
 }
 
-type IPropsType = IProps & FormProps;
+type IPropsType = IProps &
+  FormProps & {
+    ref?: any;
+  };
 
 export const IProps = (props: IProps) => null;
 
-const MyForm: React.FC<IPropsType> = ({ children, isPreview = false, cols, ...others }) => {
+const MyForm: React.FC<IPropsType> = ({
+  children,
+  isPreview = false,
+  forwardedRef,
+  cols,
+  ...others
+}) => {
   const Child = React.Children.map(children, (child) =>
     React.cloneElement(child, {
       componentProps: {
@@ -30,6 +43,9 @@ const MyForm: React.FC<IPropsType> = ({ children, isPreview = false, cols, ...ot
     }),
   );
 
+  if (forwardedRef) {
+    others.ref = forwardedRef;
+  }
   return (
     <Form {...others}>
       {cols ? (
