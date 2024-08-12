@@ -39,6 +39,10 @@ interface IPropsOptions {
    * @description 解析的数据
    */
   columns: Array<DescriptionsItemType>;
+  /**
+   * @description 是否隐藏为空的数据（span有且 为 1 时有效）
+   */
+  hideEmptyValue?: boolean;
 }
 
 /**
@@ -52,14 +56,19 @@ type IProps = IPropsOptions & DescriptionsProps;
 /**
  * @description: 组件代码
  */
-const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, ...others }) => {
+const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, hideEmptyValue, ...others }) => {
   return (
     <Descriptions {...others}>
       {columns.map((item: DescriptionsItemType) => {
         const { label, name, render, ...itemOther } = item;
+        const value = render ? render(name, dataSource[name], dataSource) : get(dataSource, name);
+        const { span } = itemOther;
+        if ((!span || span === 1) && !value) {
+          return null;
+        }
         return (
           <Descriptions.Item label={label} key={name} {...itemOther}>
-            {render ? render(name, dataSource[name], dataSource) : get(dataSource, name)}
+            {value}
           </Descriptions.Item>
         );
       })}

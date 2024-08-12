@@ -72,7 +72,12 @@ const ActionList: React.FC<IProps> = ({
           );
         } else {
           return (
-            <Dropdown.Button trigger={menuTrigger} overlay={menu(item.children, item)} {...item}>
+            <Dropdown.Button
+              onClick={() => onActionClick?.(item.key, item)}
+              trigger={menuTrigger}
+              overlay={menu(item.children, item)}
+              {...item}
+            >
               {item.label}
             </Dropdown.Button>
           );
