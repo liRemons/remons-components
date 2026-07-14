@@ -1,6 +1,7 @@
 import React from 'react';
-import type { ButtonProps, MenuProps, DropDownProps } from 'antd';
+import type { ButtonProps, MenuProps, DropdownProps } from 'antd';
 import { Button, Dropdown, Menu, Space } from 'antd';
+import { EllipsisOutlined } from '@ant-design/icons';
 
 export type ActionTypeProps = {
   /**
@@ -15,6 +16,10 @@ export type ActionTypeProps = {
    * @description children
    */
   children?: Array<any>;
+  /**
+  * @description placement
+  */
+  placement?: DropdownProps['placement']
 };
 
 export type ActionType = ActionTypeProps & ButtonProps;
@@ -31,7 +36,7 @@ export interface IProps {
   /**
    * @description 触发方式
    */
-  menuTrigger?: DropDownProps['trigger'];
+  menuTrigger?: DropdownProps['trigger'];
 }
 
 /**
@@ -48,7 +53,7 @@ const ActionList: React.FC<IProps> = ({
   onActionClick,
   menuTrigger = ['click'],
   ...others
-}) => {
+}: IProps) => {
   const onMenuClick: any = ({ key }: any, data: object) => {
     onActionClick?.(key, data);
   };
@@ -72,15 +77,16 @@ const ActionList: React.FC<IProps> = ({
           );
         } else {
           return (
-            <Dropdown.Button
-              onClick={() => onActionClick?.(item.key, item)}
-              trigger={menuTrigger}
-              overlay={menu(item.children, item)}
-              {...item}
-            >
-              {item.label}
-            </Dropdown.Button>
-          );
+            <Space.Compact>
+              <Button onClick={() => onActionClick?.(item.key, item)}>{item.label}</Button>
+              <Dropdown menu={{
+                items: item.children,
+                onClick: (e) => onActionClick?.(e.key, item)
+              }} placement={item.placement}>
+                <Button icon={<EllipsisOutlined />} />
+              </Dropdown>
+            </Space.Compact>
+          )
         }
       })}
     </Space>

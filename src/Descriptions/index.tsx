@@ -16,14 +16,16 @@ interface DescriptionsItemType {
    * @description 自定义渲染函数
    */
   render?: (name: string, value: any, record: object) => string;
-  /**
-   * @description 内容样式
-   */
-  contentStyle?: React.CSSProperties;
-  /**
+  styles: {
+    /**
    * @description label 样式
    */
-  labelStyle?: React.CSSProperties;
+    label?: React.CSSProperties;
+    /**
+   * @description 内容样式
+   */
+    style?: React.CSSProperties;
+  },
   /**
    * @description 列的数量
    */
@@ -56,7 +58,7 @@ type IProps = IPropsOptions & DescriptionsProps;
 /**
  * @description: 组件代码
  */
-const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, hideEmptyValue, ...others }) => {
+const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, hideEmptyValue, ...others } : IProps) => {
   return (
     <Descriptions {...others}>
       {columns.map((item: DescriptionsItemType) => {
@@ -67,7 +69,7 @@ const MyDescriptions: React.FC<IProps> = ({ dataSource, columns, hideEmptyValue,
           return null;
         }
         return (
-          <Descriptions.Item label={label} key={name} {...itemOther}>
+          <Descriptions.Item key={item.name} label={label} {...itemOther}>
             {value}
           </Descriptions.Item>
         );

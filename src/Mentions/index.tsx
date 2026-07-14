@@ -1,7 +1,6 @@
 import React from "react";
 import type { MentionProps } from 'antd'
 import { Mentions } from 'antd';
-const { Option } = Mentions;
 
 
 interface MentionsItemTypes {
@@ -34,11 +33,8 @@ export const MentionsItemTypes = (props: MentionsItemTypes) => null;
 /**
  * @description: 组件代码
  */
-const MyMentions: React.FC<IProps> = ({ options = [], children, ...others }) => {
+const MyMentions: React.FC<IProps> = ({ children, ...others }: IProps) => {
   return <Mentions {...others}>
-    {
-      options.map(item => <Option key={item.value} value={item.value}>{item.label}</Option>)
-    }
     {children}
   </Mentions>
 }

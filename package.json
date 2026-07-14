@@ -1,6 +1,6 @@
 {
   "name": "remons-components",
-  "version": "2.0.8",
+  "version": "3.0.0",
   "keywords": [
     "Antd",
     "react",
@@ -44,14 +44,15 @@
     ]
   },
   "dependencies": {
-    "@ant-design/icons": "^5.1.4",
+    "@ant-design/icons": "^6.3.2",
     "@types/lodash.get": "^4.4.7",
-    "antd": "^5.5.2",
+    "antd": "^6.5.1",
     "compression": "^1.7.4",
     "connect-history-api-fallback": "^2.0.0",
     "express": "^4.19.2",
     "lodash.get": "^4.4.2",
-    "react": "^17.0.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.1",

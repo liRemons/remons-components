@@ -32,11 +32,11 @@ const MyForm: React.FC<IPropsType> = ({
   forwardedRef,
   cols,
   ...others
-}) => {
+}: IProps) => {
   const Child = React.Children.map(children, (child) =>
     React.cloneElement(child, {
       componentProps: {
-        bordered: !isPreview,
+        variant: isPreview ? 'borderless' : 'outlined',
         disabled: isPreview,
         ...(child?.props?.componentProps || {}),
       },

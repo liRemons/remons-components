@@ -22,13 +22,13 @@ interface IPropsType extends Omit<IProps, 'actions'> {
   className?: string;
 }
 
-const ToolBar: React.FC<IPropsType> = ({
+export const ToolBar: React.FC<IPropsType> = ({
   rightActionList = [],
   leftActionList = [],
   bordered = true,
   className,
   ...others
-}) => {
+}: IProps) => {
   const classNames = `${['toolbar', bordered ? 'border' : ''].join(' ')} ${className}`;
   return (
     <div className={classNames} {...others}>
